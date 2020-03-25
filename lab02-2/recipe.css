@@ -1,0 +1,74 @@
+body{
+    width: 1024px;
+    margin: 0 auto;
+    font-family: Georgia, Garamond, sans-serif;
+}
+
+h3{
+    color: #A4A400;
+    text-decoration: underline;
+    background-color: #F0F0F0;
+    font-family: Lucida Sans Unicode, Helvetica, Arial;
+    font-size: 18pt;
+}
+
+.title{
+    text-align: center;
+    font-size: 22pt;
+}
+
+.mainList{
+    list-style: decimal;
+}
+
+.comments{
+    background-color: #FFFFA8;
+    margin-left: 30px;
+    font-style: italic;
+}
+
+.validatorImage{
+    height: 30px;
+    width: 60px;
+}
+
+.footerText{
+    text-align: right;
+    width: 25%;
+    padding: 0px;
+}
+
+.footerText p{
+    margin: 0px;
+    padding: 0px;
+}
+
+a{
+    color: #A4A400;
+}
+
+.list1{
+    list-style: none;
+    padding-left: 0px;
+}
+
+.tbsptooltiptext{
+    visibility: hidden;
+}
+
+.tableSpoon{
+    text-decoration: underline;
+}
+
+.tableSpoon:hover .tbsptooltiptext{
+    visibility: visible;
+}
+
+.teaSpoon{
+    text-decoration: underline;
+}
+
+.tsptooltiptext{
+    visibility: hidden;
+}
+
