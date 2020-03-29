@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Forms 1</title>
-    <script src="bootstrap/js/bootstrap.min.js" type="text/js"></script>
+    <script defer src="bootstrap/js/bootstrap.min.js" type="text/js"></script>
+    <script defer src="app.js"></script>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
@@ -13,7 +14,7 @@
 <body>
     <main class="container">
         <div class="form">
-            <form>
+            <form method="POST">
                 <div class="form-group">
                     <label for="email">Email</label><br>
                     <input type="email" class="form-control" id="email" placeholder="Enter email"
@@ -37,7 +38,7 @@
                     <label for="checkbox1">Check me out</label>
                 </div>
                 <div>
-                    <input type="submit" value="Submit" class="btn btn-primary">
+                    <input type="submit" value="Submit" class="btn btn-primary" id="submitBtn" onclick="logInputs();">
                 </div>
             </form>
         </div>
