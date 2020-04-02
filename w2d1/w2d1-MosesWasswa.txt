@@ -1,0 +1,83 @@
+Question One
+===========================================================================================
+Phase 1 - hoisting a.k.a creation of the lexical env:
+
+	var x = undefined
+	var a = undefined
+	var b = undefined
+	var c = [function(){}]
+		
+Phase 2 - Execution/Evaluation of statements and expressions
+
+
+var x = 1;
+var a = 5;
+var b = 10;
+var c = function(a,b,c){
+    console.log(x); //prints 1 to the console. 'x' is in the global lexical environment accessible from function 'c' scope
+    console.log(a);	//prints 8 to the console. 'a=8' from the call to the function c
+    var f = function(a,b,c){
+        b = a;//a is assigned to b, so from the call of c, b=8 same as a
+        console.log(b); //8 is printed to the console
+        b= c;// c is assigned to be but the change only visible from within the scope of f, and not anywhere else
+        var x = 5; // x re-assigned to 5, but only within the scope of f,
+    }
+    f(a,b,c);//this line is executed immediately after the call to the c function with initial values for a=8,b=9,c=10
+    console.log(b); //This point is outside the scope of function f, and as such b=9 is printed to the console
+    var x = 10;
+}
+c(8,9,10); //This line calls the function c, and is invoked first
+console.log(b);//This line is outside the scope of function c, and so the value of b in the global scope is printed, b = 10 is printed
+console.log(x);// This line is outide the scope of function c, and so the value of x in the global scope is printed, x = 1 is printed to the console
+
+Therefore,
+on the screen, below is printed
+1,
+8,
+8,
+9,
+10,
+1
+
+Question two
+===================================================================================================================================
+Global scope has variables that are accessible from everywhere in the source-code. Local scope has variables that can only be accessible within 
+a given function and cannot be accessed from anywhere else
+	
+Question three
+===================================================================================================================================
+a) No - because variables in B&C are local to XFunc & YFunc and not accessible outside the respective functions
+b) Yes - because scope A is a global scope accessible from anywhere within the source-code file
+c) No - because B is outside the scope of YFunc, yet the variables in YFunc are only accessible inside YFunc
+d) Yes - because scope A is global scope to both functions and therefore accessible to both funstions
+e) Yes - because scope B is outside scope C, in scope C's lexical environment
+
+Question four
+====================================================================================================================================
+phase 1:
+----------------------
+	Lexical environment:
+		x = undefined
+		[myFunction()]
+
+Phase 2:
+-------------------------
+var x = 9; //globally x is set to 9
+function myFunction(){
+	return x*x; //global value of x=9 is accessible here. x is set to 9 initially
+}
+document.write(myFunction());//call to myFunction(), prints 81 to the screen
+x=5; //x is re-assigned to 5, and is still in the global scope
+document.write(myFunction());//prints 25 to the screen
+
+
+var foo = 1;
+function bar(){
+    if(!foo){ //foo is accessible inside this function, set to 1, means the if condition is true 
+				//since foo is not zero
+        var foo = 10; //value of x is changed to 10 within the scope of bar() function
+    }
+    alert(foo);//at this point within the scope of bar(), alert prints 10
+}
+
+bar();//prints 10 in the alert

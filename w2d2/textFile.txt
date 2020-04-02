@@ -1,0 +1,7 @@
+================Question Seven=============================================================
+Free variables are variables that are neither locally declared nor passed as parameter to that closure
+-->counter is the free variable
+
+=================Question Nine==================================================================
+Use the revealing module pattern to house the code in a module with private and public zones
+
